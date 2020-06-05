@@ -1,0 +1,9 @@
+{
+  "name": "posmoni-node",
+  "version": "1.0.0",
+  "description": "Node.js library for the Posmoni API.",
+  "main": "index.js",
+  "repository": "git@github.com:datawowio/posmoni-node.git",
+  "author": "datawow.io",
+  "license": "MIT"
+}
