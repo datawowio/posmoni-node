@@ -4,7 +4,7 @@
   "description": "Node.js library for the Posmoni API.",
   "main": "lib/posmoni.js",
   "scripts": {
-    "test": "npm run lint && npm run test:unit:coverage",
+    "test": "npm run test:unit:coverage",
     "lint": "eslint --ext .js .",
     "test:unit": "NODE_ENV=test mocha --recursive ./tests/unit",
     "test:unit:coverage": "NODE_ENV=test istanbul cover _mocha -- --recursive ./tests"

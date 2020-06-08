@@ -1,0 +1,8 @@
+{
+  "lib/*.js": {
+    "alternate": "tests/lib/{}.test.js"
+  },
+  "tests/lib/*.test.js": {
+    "alternate": "lib/{}.js"
+  }
+}
