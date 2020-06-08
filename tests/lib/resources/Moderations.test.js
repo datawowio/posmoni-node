@@ -6,12 +6,11 @@ const { getModeration, createModeration } = require('../../fixtures/moderations'
 sinon.assert.expose(chai.assert, { prefix: '' });
 const assert = chai.assert;
 
-const PROJECT_KEY = 'project-key';
+const PROJECT_KEY = { token: 'project-key' }
 
-const moderations = require('../../../lib/resources/Moderations');
+const moderations = require('../../../lib/resources/Moderations')(PROJECT_KEY);
 
 const options = {
-  token: PROJECT_KEY,
   data: 'https://assets-cdn.github.com/images/modules/open_graph/github-mark.png',
   customId: '1',
   query: 1,
@@ -31,7 +30,7 @@ describe('resources/Moderations', () => {
 
   it('should get a moderation', async () => {
     sandbox.stub(axios, 'request').resolves(Promise.resolve(getModeration));
-    const result = await moderations.get({ token, query } = options);
+    const result = await moderations.get({ query } = options);
     const parsed = JSON.parse(result);
     assert.isObject(parsed.data.attributes);
     assert.equal(parsed.meta.code, 200);
@@ -39,7 +38,7 @@ describe('resources/Moderations', () => {
 
   it('should create a moderation', async () => {
     sandbox.stub(axios, 'request').resolves(Promise.resolve(createModeration));
-    const result = await moderations.create({ token, data, customId } = options);
+    const result = await moderations.create({ data, customId } = options);
     const parsed = JSON.parse(result);
     assert.isObject(parsed.data.attributes);
     assert.equal(parsed.meta.code, 201);
