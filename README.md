@@ -22,7 +22,7 @@ value:
 <!-- prettier-ignore -->
 ```js
 const posmoni = require('posmoni')({
-  token: 'project-token',
+  projectKey: 'project-key',
 });
 
 posmoni.moderations.create({
@@ -37,7 +37,7 @@ Or using ES modules and `async`/`await`:
 
 ```js
 const posmoni = require('posmoni')({
-  token: 'project-token',
+  projectKey: 'project-key',
 });
 
 (async() => {
@@ -67,7 +67,7 @@ Creating a moderation can be done by using `posmoni.moderations.create` which ac
 
 ```js
 const posmoni = require('posmoni')({
-  token: 'project-token',
+  projectKey: 'project-key',
 });
 
 posmoni.moderations

@@ -6,7 +6,7 @@ const { getModeration, createModeration } = require('../../fixtures/moderations'
 sinon.assert.expose(chai.assert, { prefix: '' });
 const assert = chai.assert;
 
-const PROJECT_KEY = { token: 'project-key' }
+const PROJECT_KEY = { projectKey: 'project-key' }
 
 const moderations = require('../../../lib/resources/Moderations')(PROJECT_KEY);
 
