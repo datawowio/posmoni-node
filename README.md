@@ -21,7 +21,9 @@ value:
 
 <!-- prettier-ignore -->
 ```js
-const posmoni = require('posmoni');
+const posmoni = require('posmoni')({
+  projectKey: 'project-key',
+});
 
 posmoni.moderations.create({
   data: 'picture-url',
@@ -34,11 +36,12 @@ posmoni.moderations.create({
 Or using ES modules and `async`/`await`:
 
 ```js
-const posmoni = require('posmoni');
+const posmoni = require('posmoni')({
+  projectKey: 'project-key',
+});
 
 (async() => {
   const response = await posmoni.moderations.get({
-    token: 'project-token',
     query: 'moderation-id'
   });
   console.log(response.data);
@@ -63,11 +66,12 @@ Creating a moderation can be done by using `posmoni.moderations.create` which ac
 | info | json | No | Additional info only for ID card check template |
 
 ```js
-const posmoni = require('posmoni');
+const posmoni = require('posmoni')({
+  projectKey: 'project-key',
+});
 
 posmoni.moderations
   .create({
-    token: 'project-token',
     data: 'picture-url',
     customID: 'custom-id'
   })
@@ -84,7 +88,7 @@ can access the raw data via `data` attribute:
 ```javascript
 posmoni
   .moderations
-  .get({ token: 'project-token'})
+  .get()
   .then((result) => console.log(result.data))
   .catch((error) => console.log(error))
 ```
@@ -107,7 +111,7 @@ customer ID to it, e.g.
 
 ```javascript
 posmoni.moderations
-  .get({ token: 'project-token', query: 'custom-id-1'})
+  .get({ query: 'custom-id-1'})
   .then((result) => consle.log(result.data))
   .catch((error) => console.log(error))
 ```
