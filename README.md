@@ -58,7 +58,7 @@ Creating a moderation can be done by using `posmoni.moderations.create` which ac
 | ------------- |:-------------:| :-----:| :-----|
 | data | string | **Yes** | Image's url or text data |
 | postback_url| string | No | URL for answer callback once task has been moderated |
-| postback_method| string | No | Callback Configuration HTTP method ('GET', 'POST', 'PUT', 'PATCH') |
+| postback_method| string | No | Callback Configuration HTTP method (`GET`, `POST`, `PUT`, `PATCH`) |
 | custom_id | string | No | Custom ID for retrieving moderation task |
 | info | json | No | Additional info only for ID card check template |
 
